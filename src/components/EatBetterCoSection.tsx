@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import EatBetterCoLogo from '../logos/eatbetterco.svg';
 
+import ShortPointsDisplay from './ShortPointsDisplay';
+
 const EatBetterCoSection: React.FC = () => {
     const [email, setEmail] = useState("");
     const [response, setResponse] = useState<any>(null);
@@ -33,7 +35,7 @@ const EatBetterCoSection: React.FC = () => {
                 className="mx-auto mt-5 mb-1"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', width: '550px', fontFamily: "Garamond", fontSize: '24px' }}>
+            <p style={{ color: 'black', width: '1000px', paddingLeft: '280px', paddingRight: '280px', fontFamily: "Garamond", fontSize: '24px' }}>
                 Only the best of ingredients, carefully selected, make their way into our snacks
             </p>
             <div className="mt-10 flex flex-col items-center">
@@ -61,45 +63,9 @@ const EatBetterCoSection: React.FC = () => {
                 >
                     Submit
                 </button>
-                {response && response.error && (
-                    <p className="mt-5 text-red-600 text-lg font-semibold">You are not a member of the company</p>
-                )}
-                {response && response.total_points === 0 && (
-                    <p className="mt-5 text-blue-600 text-lg font-semibold">
-                        You don't have points in this company. Get some by shopping!
-                    </p>
-                )}
-                {response && response.total_points > 0 && (
-                    <div className="mt-10 flex flex-col items-center space-y-5 mb-12">
 
-                        <div className="bg-blue-100 text-blue-700 p-5 rounded-lg text-xl font-bold shadow-md">
-                            Total Points: {Math.round(response.total_points * 100) / 100}
-                        </div>
+                <ShortPointsDisplay response={response} value={email} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company2"} param={"email"} />
 
-                        <div className="w-full overflow-x-auto max-w-lg rounded-lg shadow-lg mt-6">
-                            <table className="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
-                                <thead>
-                                    <tr className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
-                                        <th className="py-3 px-20 text-left font-semibold">Points</th>
-                                        <th className="py-3 px-20 text-left font-semibold">Expiry Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {response.points.map((point: any, index: number) => (
-                                        <tr
-                                            key={index}
-                                            className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'
-                                                } hover:bg-blue-50 transition duration-150`}
-                                        >
-                                            <td className="py-4 px-6 text-gray-800 font-medium">{Math.round(point.points * 100) / 100}</td>
-                                            <td className="py-4 px-6 text-gray-800">{new Date(point.expiry).toLocaleDateString()}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     );

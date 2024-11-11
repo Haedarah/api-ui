@@ -24,7 +24,7 @@ const LandingPage: React.FC = () => {
     };
 
     return (
-        <div className={`min-h-screen ${getBackgroundColor()} transition-all duration-300`}>
+        <div className={`min-h-screen ${getBackgroundColor()} transition-all duration-300 pb-10`}>
             <Navbar onSelectCompany={handleSelectCompany} />
 
             <div className="flex justify-center items-center h-full text-white">
@@ -33,7 +33,6 @@ const LandingPage: React.FC = () => {
                 {selectedCompany === 'Country Bean' && <CountryBeanSection />}
                 {selectedCompany === 'PlusGold' && <PlusGoldSection />}
             </div>
-
         </div>
     );
 };
