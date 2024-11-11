@@ -3,6 +3,8 @@ import sanfeLogo from '../logos/sanfe.png';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
+import ShortPointsDisplay from './ShortPointsDisplay';
+
 const SanFeSection: React.FC = () => {
     const [phone, setPhone] = useState("");
     const [response, setResponse] = useState<any>(null);
@@ -35,7 +37,7 @@ const SanFeSection: React.FC = () => {
                 className="mx-auto mt-10 mb-8"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', width: '550px', fontFamily: "Garamond", fontSize: '24px' }}>
+            <p style={{ color: 'black', width: '1000px', paddingLeft: '200px', paddingRight: '200px', fontFamily: "Garamond", fontSize: '24px' }}>
                 India's revolutionary feminine hygiene and period care brand that strives to build a better world for women
             </p>
             <div className="mt-10 flex flex-col items-center">
@@ -65,45 +67,9 @@ const SanFeSection: React.FC = () => {
                 >
                     Submit
                 </button>
-                {response && response.error && (
-                    <p className="mt-5 text-red-600 text-lg font-semibold">You are not a member of the company</p>
-                )}
-                {response && response.total_points === 0 && (
-                    <p className="mt-5 text-blue-600 text-lg font-semibold">
-                        You don't have points in this company. Get some by shopping!
-                    </p>
-                )}
-                {response && response.total_points > 0 && (
-                    <div className="mt-10 flex flex-col items-center space-y-5 mb-12">
 
-                        <div className="bg-blue-100 text-blue-700 p-5 rounded-lg text-xl font-bold shadow-md">
-                            Total Points: {Math.round(response.total_points * 100) / 100}
-                        </div>
+                <ShortPointsDisplay response={response} value={phone} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company1"} param={"phone"} />
 
-                        <div className="w-full overflow-x-auto max-w-lg rounded-lg shadow-lg mt-6">
-                            <table className="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
-                                <thead>
-                                    <tr className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
-                                        <th className="py-3 px-20 text-left font-semibold">Points</th>
-                                        <th className="py-3 px-20 text-left font-semibold">Expiry Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {response.points.map((point: any, index: number) => (
-                                        <tr
-                                            key={index}
-                                            className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'
-                                                } hover:bg-blue-50 transition duration-150`}
-                                        >
-                                            <td className="py-4 px-6 text-gray-800 font-medium">{Math.round(point.points * 100) / 100}</td>
-                                            <td className="py-4 px-6 text-gray-800">{new Date(point.expiry).toLocaleDateString()}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     );
