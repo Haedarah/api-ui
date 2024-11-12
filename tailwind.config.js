@@ -17,6 +17,9 @@ module.exports = {
         },
         PlusGold: {
           500: '#c4963c',
+        },
+        Deciwood: {
+          500: '#1c1c1c',
         }
       },
     },

@@ -9,7 +9,8 @@ const Navbar: React.FC<NavbarProps> = ({ onSelectCompany }) => {
 
     const companies = [
         { name: 'SanFe', hoverColor: 'bg-SanFe-500' },
-        { name: 'Eat Better Co', hoverColor: 'bg-EatBetterCo-500' },
+        // { name: 'Eat Better Co', hoverColor: 'bg-EatBetterCo-500' },
+        { name: 'Deciwood', hoverColor: 'bg-Deciwood-500' },
         { name: 'Country Bean', hoverColor: 'bg-CountryBean-500' },
         { name: 'PlusGold', hoverColor: 'bg-PlusGold-500' }
     ];
