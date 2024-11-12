@@ -37,7 +37,7 @@ const SanFeSection: React.FC = () => {
                 className="mx-auto mt-10 mb-8"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', width: '1000px', paddingLeft: '200px', paddingRight: '200px', fontFamily: "Garamond", fontSize: '24px' }}>
+            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
                 India's revolutionary feminine hygiene and period care brand that strives to build a better world for women
             </p>
             <div className="mt-10 flex flex-col items-center">

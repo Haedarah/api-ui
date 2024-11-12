@@ -35,7 +35,7 @@ const EatBetterCoSection: React.FC = () => {
                 className="mx-auto mt-5 mb-1"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', width: '1000px', paddingLeft: '280px', paddingRight: '280px', fontFamily: "Garamond", fontSize: '24px' }}>
+            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
                 Only the best of ingredients, carefully selected, make their way into our snacks
             </p>
             <div className="mt-10 flex flex-col items-center">

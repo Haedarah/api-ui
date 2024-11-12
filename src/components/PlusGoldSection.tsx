@@ -35,7 +35,7 @@ const PlusGoldSection: React.FC = () => {
                 className="mx-auto m-5"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', width: '1000px', paddingLeft: '300px', paddingRight: '300px', fontFamily: "Garamond", fontSize: '24px' }}>
+            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
                 A revolutionary app that makes investing in gold hassle-free and rewarding
             </p>
             <div className="mt-10 flex flex-col items-center">
