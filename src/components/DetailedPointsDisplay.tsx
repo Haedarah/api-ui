@@ -86,16 +86,22 @@ const DetailedPointsDisplay: React.FC<DetailedPointsDisplayProps> = ({ value, ap
                             statusColor = "text-black font-semibold bg-gray-200";
                         }
 
+                        let issuance = "";
+                        if (point.issuance) issuance = new Date(point.issuance).toLocaleDateString();
+                        else if (point.issued_on) issuance = new Date(point.issued_on).toLocaleDateString();
+                        else if (point.issued) issuance = new Date(point.issued).toLocaleDateString();
+                        else issuance = '-';
+
                         return (
                             <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'} hover:bg-blue-50 transition duration-150`}>
                                 <td className="py-4 px-6 text-gray-800 font-medium">
                                     {point.points ? Math.round(point.points * 100) / 100 : "-"}
                                 </td>
-                                <td className="py-4 px-6 text-gray-800 font-medium">
+                                <td className="py-4 px-6 text-gray-800 font-medium md:font-bold">
                                     {point.current_points ? Math.round(point.current_points * 100) / 100 : "-"}
                                 </td>
                                 <td className="py-4 px-6 text-gray-800 text-sm">
-                                    {point.issuance ? new Date(point.issuance).toLocaleDateString() : "-"}
+                                    {issuance}
                                 </td>
                                 <td className="py-4 px-6 text-gray-800 text-sm">
                                     {point.expiry ? new Date(point.expiry).toLocaleDateString() : "-"}
