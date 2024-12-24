@@ -11,7 +11,9 @@ const Navbar: React.FC<NavbarProps> = ({ onSelectCompany }) => {
         { name: 'Tusker', hoverColor: 'bg-Tusker-500' },
         { name: 'Bank of Scotland', hoverColor: 'bg-BankOfScotland-500' },
         { name: 'Cavendish Online', hoverColor: 'bg-CavendishOnline-500' },
-        { name: 'Lloyd Living', hoverColor: 'bg-LloydLiving-500' }
+        { name: 'Lloyd Living', hoverColor: 'bg-LloydLiving-500' },
+        { name: 'Nectar', hoverColor: 'bg-Nectar-500' },
+        { name: 'HSBC', hoverColor: 'bg-HSBC-500' }
     ];
 
     const handleClick = (company: string) => {
@@ -20,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSelectCompany }) => {
     };
 
     return (
-        <nav className="bg-gray-800 p-6 flex justify-center space-x-4">
+        <nav className="bg-gray-600 p-6 flex justify-center space-x-4">
             {companies.map((company) => (
                 <button
                     key={company.name}

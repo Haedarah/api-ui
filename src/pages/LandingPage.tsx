@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 
 import TuskerSection from '../components/TuskerSection';
-import BankOfScotlandSection from '../components/BankOfScotland';
+import BankOfScotlandSection from '../components/BankOfScotlandSection';
 import CavendishOnlineSection from '../components/CavendishOnlineSection';
 import LloydLivingSection from '../components/LloydLivingSection';
-
+import NectarSection from '../components/NectarSection';
+import HSBCSection from '../components/HsbcSection';
 
 
 const LandingPage: React.FC = () => {
@@ -21,6 +22,8 @@ const LandingPage: React.FC = () => {
         else if (selectedCompany === 'Bank of Scotland') return 'bg-BankOfScotland-500 bg-opacity-20';
         else if (selectedCompany === 'Cavendish Online') return 'bg-CavendishOnline-500 bg-opacity-20';
         else if (selectedCompany === 'Lloyd Living') return 'bg-LloydLiving-500 bg-opacity-20';
+        else if (selectedCompany === 'Nectar') return 'bg-Nectar-500 bg-opacity-20';
+        else if (selectedCompany === 'HSBC') return 'bg-HSBC-500 bg-opacity-20';
     };
 
     return (
@@ -32,6 +35,8 @@ const LandingPage: React.FC = () => {
                 {selectedCompany === 'Bank of Scotland' && <BankOfScotlandSection />}
                 {selectedCompany === 'Cavendish Online' && <CavendishOnlineSection />}
                 {selectedCompany === 'Lloyd Living' && <LloydLivingSection />}
+                {selectedCompany === 'Nectar' && <NectarSection />}
+                {selectedCompany === 'HSBC' && <HSBCSection />}
             </div>
         </div>
     );

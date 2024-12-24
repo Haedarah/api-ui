@@ -20,6 +20,12 @@ module.exports = {
         },
         BankOfScotland: {
           500: '#06276a',
+        },
+        Nectar: {
+          500: '#310e60',
+        },
+        HSBC: {
+          500: '#db0011',
         }
       },
     },

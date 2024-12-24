@@ -64,7 +64,7 @@ const DetailedPointsDisplay: React.FC<DetailedPointsDisplayProps> = ({ value, ap
                     </tr>
                 </thead>
                 <tbody>
-                    {detailedData.points.filter((point: any) => point.points != 0).map((point: any, index: number) => {
+                    {detailedData.points.filter((point: any) => point.points !== 0).map((point: any, index: number) => {
                         const isExpired = new Date(point.expiry) < new Date();
                         const isPartiallyUsed = point.deduction_history && point.deduction_history.length > 0;
                         const isFullyActive = !isExpired && point.current_points === point.points;
