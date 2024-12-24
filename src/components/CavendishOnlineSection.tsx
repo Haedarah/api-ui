@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import EatBetterCoLogo from '../logos/eatbetterco.svg';
+import CavendishOnlineLogo from '../logos/CavendishOnline.png';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 import ShortPointsDisplay from './ShortPointsDisplay';
 
-const EatBetterCoSection: React.FC = () => {
-    const [email, setEmail] = useState("");
+const CavendishOnlineSection: React.FC = () => {
+    const [phone, setPhone] = useState("");
     const [response, setResponse] = useState<any>(null);
     const API_URL = process.env.REACT_APP_API_URL;
-    const API_KEY = process.env.REACT_APP_EAT_BETTER_CO_API_KEY;
+    const API_KEY = process.env.REACT_APP_CAVENDISH_ONLINE_API_KEY;
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch(`${API_URL}/Company2/api/points_details?email=${email}`, {
+            const res = await fetch(`${API_URL}/Company3/api/points_details?phone=${encodeURIComponent(phone)}`, {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json",
@@ -30,13 +32,13 @@ const EatBetterCoSection: React.FC = () => {
     return (
         <div>
             <img
-                src={EatBetterCoLogo}
-                alt="eatBetterCo Logo"
-                className="mx-auto mt-5 mb-1"
-                style={{ width: '150px', height: 'auto' }}
+                src={CavendishOnlineLogo}
+                alt="Cavendish Online Logo"
+                className="mx-auto"
+                style={{ width: '180px', height: 'auto' }}
             />
-            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
-                Only the best of ingredients, carefully selected, make their way into our snacks
+            <p style={{ color: 'black', maxWidth: '910px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
+                An online insurance broker that provides a range of insurance products and services, emphasizing competitive pricing and customer service
             </p>
             <div className="mt-10 flex flex-col items-center">
                 <p style={{ color: 'black', fontFamily: "Lato", fontSize: '28px' }}>
@@ -46,15 +48,17 @@ const EatBetterCoSection: React.FC = () => {
                     Check your loyalty points here:
                 </p>
                 <p style={{ color: 'black', fontFamily: "Garamond", fontSize: '16px' }}>
-                    Email Address:
+                    Mobile Number:
                 </p>
 
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="p-2 w-64 rounded-md text-black"
+                <PhoneInput
+                    name="phone"
+                    defaultCountry="in"
+                    value={phone}
+                    onChange={(phone) => setPhone(phone)}
+                    placeholder="Enter your phone number"
+                    className="w-500 text-black"
+                    required
                 />
 
                 <button
@@ -64,11 +68,11 @@ const EatBetterCoSection: React.FC = () => {
                     Submit
                 </button>
 
-                <ShortPointsDisplay response={response} value={email} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company2"} param={"email"} />
+                <ShortPointsDisplay response={response} value={phone} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company3"} param={"phone"} />
 
             </div>
         </div>
     );
 };
 
-export default EatBetterCoSection;
+export default CavendishOnlineSection;

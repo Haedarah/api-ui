@@ -6,20 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        SanFe: {
-          500: '#D09ADC',
+        Tusker: {
+          500: '#ff0808',
         },
         EatBetterCo: {
           500: '#603a38',
         },
-        CountryBean: {
-          500: '#bf6a57',
+        CavendishOnline: {
+          500: '#840544',
         },
-        PlusGold: {
-          500: '#c4963c',
+        LloydLiving: {
+          500: '#11b67a',
         },
-        Deciwood: {
-          500: '#1c1c1c',
+        BankOfScotland: {
+          500: '#06276a',
         }
       },
     },

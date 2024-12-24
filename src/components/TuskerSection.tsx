@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import CountryBeanLogo from '../logos/CountryBean.png';
+import TuskerLogo from '../logos/Tusker-Logo.png';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
 import ShortPointsDisplay from './ShortPointsDisplay';
 
-const CountryBeanSection: React.FC = () => {
+const TuskerSection: React.FC = () => {
     const [phone, setPhone] = useState("");
     const [response, setResponse] = useState<any>(null);
     const API_URL = process.env.REACT_APP_API_URL;
-    const API_KEY = process.env.REACT_APP_COUNTRY_BEAN_API_KEY;
+    const API_KEY = process.env.REACT_APP_TUSKER_API_KEY;
 
     const handleSubmit = async () => {
         try {
-            const res = await fetch(`${API_URL}/Company3/api/points_details?phone=${encodeURIComponent(phone)}`, {
+            const res = await fetch(`${API_URL}/Company1/api/points_details?phone=${encodeURIComponent(phone)}`, {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json",
@@ -32,13 +32,13 @@ const CountryBeanSection: React.FC = () => {
     return (
         <div>
             <img
-                src={CountryBeanLogo}
-                alt="Country Bean Logo"
-                className="mx-auto mt-5 mb-2"
-                style={{ width: '300px', height: 'auto' }}
+                src={TuskerLogo}
+                alt="Tusker Logo"
+                className="mx-auto mt-4 mb-6"
+                style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
-                India's first flavoured coffee brand and one of the fastest growing direct-to-consumer startups in the country
+            <p style={{ color: 'black', maxWidth: '900px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
+                A leading provider of salary sacrifice car schemes in the UK, enabling businesses to offer employees tax-efficient vehicle options
             </p>
             <div className="mt-10 flex flex-col items-center">
                 <p style={{ color: 'black', fontFamily: "Lato", fontSize: '28px' }}>
@@ -68,11 +68,11 @@ const CountryBeanSection: React.FC = () => {
                     Submit
                 </button>
 
-                <ShortPointsDisplay response={response} value={phone} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company3"} param={"phone"} />
+                <ShortPointsDisplay response={response} value={phone} apiUrl={`${API_URL}`} apiKey={`${API_KEY}`} company={"Company1"} param={"phone"} />
 
             </div>
         </div>
     );
 };
 
-export default CountryBeanSection;
+export default TuskerSection;

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import PlusGoldLogo from '../logos/PlusGold.png';
+import LloydLivingLogo from '../logos/LloydsLiving.png';
 
 import ShortPointsDisplay from './ShortPointsDisplay';
 
-const PlusGoldSection: React.FC = () => {
+const LloydLivingSection: React.FC = () => {
     const [email, setEmail] = useState("");
     const [response, setResponse] = useState<any>(null);
     const API_URL = process.env.REACT_APP_API_URL;
-    const API_KEY = process.env.REACT_APP_PLUS_GOLD_API_KEY;
+    const API_KEY = process.env.REACT_APP_LLOYDS_LIVING_API_KEY;
 
     const handleSubmit = async () => {
         try {
@@ -30,13 +30,13 @@ const PlusGoldSection: React.FC = () => {
     return (
         <div>
             <img
-                src={PlusGoldLogo}
-                alt="PlusGold Logo"
-                className="mx-auto"
+                src={LloydLivingLogo}
+                alt="Lloyd Living Logo"
+                className="mx-auto mt-8 mb-6"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
-                A revolutionary app that makes investing in gold hassle-free and rewarding
+            <p style={{ color: 'black', maxWidth: '900px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
+                A modern property management company specializing in high-quality rental homes across the UK, focusing on sustainable living
             </p>
             <div className="mt-10 flex flex-col items-center">
                 <p style={{ color: 'black', fontFamily: "Lato", fontSize: '28px' }}>
@@ -71,4 +71,4 @@ const PlusGoldSection: React.FC = () => {
     );
 };
 
-export default PlusGoldSection;
+export default LloydLivingSection;

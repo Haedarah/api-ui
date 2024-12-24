@@ -2,27 +2,25 @@ import React, { useState } from 'react';
 
 import Navbar from '../components/Navbar';
 
-import SanFeSection from '../components/SanFeSection';
-// import EatBetterCoSection from '../components/EatBetterCoSection';
-import DeciwoodSection from '../components/DeciwoodSection';
-import CountryBeanSection from '../components/CountryBeanSection';
-import PlusGoldSection from '../components/PlusGoldSection';
+import TuskerSection from '../components/TuskerSection';
+import BankOfScotlandSection from '../components/BankOfScotland';
+import CavendishOnlineSection from '../components/CavendishOnlineSection';
+import LloydLivingSection from '../components/LloydLivingSection';
 
 
 
 const LandingPage: React.FC = () => {
-    const [selectedCompany, setSelectedCompany] = useState<string | null>('SanFe'); //Default to 'SanFe'
+    const [selectedCompany, setSelectedCompany] = useState<string | null>('Tusker'); //Default to 'Tusker'
 
     const handleSelectCompany = (company: string) => {
         setSelectedCompany(company);
     };
 
     const getBackgroundColor = () => {
-        if (selectedCompany === 'SanFe') return 'bg-SanFe-500 bg-opacity-20';
-        // else if (selectedCompany === 'Eat Better Co') return 'bg-EatBetterCo-500 bg-opacity-20';
-        else if (selectedCompany === 'Deciwood') return 'bg-Deciwood-500 bg-opacity-20';
-        else if (selectedCompany === 'Country Bean') return 'bg-CountryBean-500 bg-opacity-20';
-        else if (selectedCompany === 'PlusGold') return 'bg-PlusGold-500 bg-opacity-20';
+        if (selectedCompany === 'Tusker') return 'bg-Tusker-500 bg-opacity-20';
+        else if (selectedCompany === 'Bank of Scotland') return 'bg-BankOfScotland-500 bg-opacity-20';
+        else if (selectedCompany === 'Cavendish Online') return 'bg-CavendishOnline-500 bg-opacity-20';
+        else if (selectedCompany === 'Lloyd Living') return 'bg-LloydLiving-500 bg-opacity-20';
     };
 
     return (
@@ -30,11 +28,10 @@ const LandingPage: React.FC = () => {
             <Navbar onSelectCompany={handleSelectCompany} />
 
             <div className="flex justify-center items-center h-full text-white">
-                {selectedCompany === 'SanFe' && <SanFeSection />}
-                {/* {selectedCompany === 'EatBetterCo' && <EatBetterCoSection />} */}
-                {selectedCompany === 'Deciwood' && <DeciwoodSection />}
-                {selectedCompany === 'Country Bean' && <CountryBeanSection />}
-                {selectedCompany === 'PlusGold' && <PlusGoldSection />}
+                {selectedCompany === 'Tusker' && <TuskerSection />}
+                {selectedCompany === 'Bank of Scotland' && <BankOfScotlandSection />}
+                {selectedCompany === 'Cavendish Online' && <CavendishOnlineSection />}
+                {selectedCompany === 'Lloyd Living' && <LloydLivingSection />}
             </div>
         </div>
     );

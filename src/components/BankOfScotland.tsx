@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import DeciwoodLogo from '../logos/Deciwood.png';
+import BankOfScotlandLogo from '../logos/BankOfScotland.png';
 
 import ShortPointsDisplay from './ShortPointsDisplay';
 
-const DeciwoodSection: React.FC = () => {
+const BankOfScotlandSection: React.FC = () => {
     const [email, setEmail] = useState("");
     const [response, setResponse] = useState<any>(null);
     const API_URL = process.env.REACT_APP_API_URL;
-    const API_KEY = process.env.REACT_APP_DECIWOOD_API_KEY;
+    const API_KEY = process.env.REACT_APP_BANK_OF_SCOTLAND_API_KEY;
 
     const handleSubmit = async () => {
         try {
@@ -30,13 +30,13 @@ const DeciwoodSection: React.FC = () => {
     return (
         <div>
             <img
-                src={DeciwoodLogo}
-                alt="Deciwood Logo"
-                className="mx-auto"
+                src={BankOfScotlandLogo}
+                alt="Bank Of Scotland Logo"
+                className="mx-auto mt-10 mb-5"
                 style={{ width: '150px', height: 'auto' }}
             />
-            <p style={{ color: 'black', maxWidth: '800px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
-                The only Indian brand that crafts Bluetooth speakers from wood
+            <p style={{ color: 'black', maxWidth: '900px', margin: '0 auto', fontFamily: 'Garamond', fontSize: '24px', textAlign: 'center', paddingLeft: '120px', paddingRight: '120px' }}>
+                A historic commercial and clearing bank based in Edinburgh, Scotland, offering a wide range of financial services since 1695
             </p>
             <div className="mt-10 flex flex-col items-center">
                 <p style={{ color: 'black', fontFamily: "Lato", fontSize: '28px' }}>
@@ -71,4 +71,4 @@ const DeciwoodSection: React.FC = () => {
     );
 };
 
-export default DeciwoodSection;
+export default BankOfScotlandSection;
